@@ -4,29 +4,25 @@ const App: React.FC = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div style={{ textAlign: 'center', padding: '2rem' }}>
-      <h1>Electron + Vite + React + TypeScript</h1>
-      <p>Application construite avec Electron Forge</p>
-      
-      <div style={{ margin: '2rem 0' }}>
-        <button 
-          onClick={() => setCount(count + 1)}
-          style={{
-            padding: '0.5rem 1rem',
-            backgroundColor: '#4f46e5',
-            color: 'white',
-            border: 'none',
-            borderRadius: '0.25rem',
-            cursor: 'pointer'
-          }}
-        >
-          Compteur: {count}
-        </button>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-blue-200 p-4">
+      <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-xl">
+        <h1 className="mb-6 text-center text-3xl font-bold text-blue-600">
+          Electron + Vite + React + Tailwind
+        </h1>
+        
+        <div className="my-8 flex justify-center">
+          <button
+            onClick={() => setCount((count) => count + 1)}
+            className="rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white shadow-md transition-all hover:bg-blue-700 active:translate-y-0.5"
+          >
+            Compteur: {count}
+          </button>
+        </div>
+        
+        <p className="text-center text-sm text-gray-600">
+          Modifiez <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm">src/App.tsx</code> et enregistrez pour tester le Hot Reload
+        </p>
       </div>
-      
-      <p>
-        Modifiez <code>src/App.tsx</code> et enregistrez pour tester le Hot Reload
-      </p>
     </div>
   );
 };
